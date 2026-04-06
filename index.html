@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lake Como Elopement 2027</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --milk: #FAF8F4;
+      --sand: #F5F0E8;
+      --oat: #EDE6D6;
+      --taupe: #C4B89A;
+      --mocha: #8C7355;
+      --charcoal: #3D3830;
+      --border: rgba(139,115,85,0.18);
+    }
+
+    body {
+      background: var(--milk);
+      color: var(--charcoal);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 100px;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--mocha);
+    }
+
+    /* ---- Section ---- */
+    .section { margin-bottom: 52px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    /* ---- Inputs ---- */
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="url"],
+    select,
+    textarea {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--mocha);
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--taupe); }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--sand);
+      color: var(--mocha);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn:hover { background: var(--oat); border-color: var(--taupe); }
+
+    .btn-primary {
+      background: var(--mocha);
+      color: var(--milk);
+      border-color: var(--mocha);
+    }
+
+    .btn-primary:hover { background: #7a6348; border-color: #7a6348; }
+
+    /* ---- Badges ---- */
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .badge-paid { background: #e6f2e6; color: #3d6e3d; border: 1px solid rgba(61,110,61,0.18); }
+    .badge-unpaid { background: var(--oat); color: var(--mocha); border: 1px solid var(--border); }
+
+    /* ---- Owner pills ---- */
+    .pill {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .pill-jp { background: #ddeaf6; color: #3464849a; color: #3a6a9a; }
+    .pill-ds { background: #f5e8ef; color: #8a4a6a; }
+    .pill-both { background: var(--oat); color: var(--mocha); }
+
+    /* ---- Cards ---- */
+    .card {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    /* ---- Form helpers ---- */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+
+    .form-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    /* ---- Add button ---- */
+    .add-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      color: var(--mocha);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 10px 0 4px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .add-btn:hover { color: var(--charcoal); }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: var(--taupe);
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      padding: 0 4px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .delete-btn:hover { color: #b05050; }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      text-align: center;
+      padding: 64px 0 52px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 52px;
+    }
+
+    .hero-eyebrow { margin-bottom: 14px; }
+
+    .hero-names {
+      font-family: 'Playfair Display', serif;
+      font-size: 54px;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .hero-subline {
+      font-size: 15px;
+      color: var(--mocha);
+      letter-spacing: 0.05em;
+      margin-bottom: 40px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+    }
+
+    .countdown-unit {
+      text-align: center;
+      padding: 0 18px;
+      border-right: 1px solid var(--border);
+    }
+
+    .countdown-unit:last-child { border-right: none; }
+
+    .cd-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--charcoal);
+      display: block;
+      line-height: 1;
+    }
+
+    .cd-label {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-top: 5px;
+      display: block;
+    }
+
+    /* ===================== PINTEREST ===================== */
+    .pinterest-row { display: flex; gap: 10px; align-items: center; }
+    .pinterest-row input { flex: 1; }
+
+    /* ===================== FINANCIAL ===================== */
+    .currency-toggle {
+      display: flex;
+      gap: 3px;
+      background: var(--oat);
+      border-radius: 6px;
+      padding: 3px;
+    }
+
+    .currency-btn {
+      padding: 4px 14px;
+      border-radius: 4px;
+      border: none;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--mocha);
+      cursor: pointer;
+      transition: background 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .currency-btn.active { background: var(--milk); color: var(--charcoal); }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .metric-card {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+
+    .metric-action {
+      font-size: 10px;
+      color: var(--mocha);
+      cursor: pointer;
+      text-decoration: underline;
+      margin-top: 6px;
+      display: block;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .progress-wrap {
+      background: var(--oat);
+      border-radius: 4px;
+      height: 5px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--mocha);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--taupe);
+      margin-top: 7px;
+    }
+
+    /* ===================== PAYMENT SCHEDULE ===================== */
+    .payment-row {
+      display: grid;
+      grid-template-columns: 56px 1fr 120px 130px 70px;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .payment-row:last-child { border-bottom: none; }
+
+    .pay-num { font-size: 12px; color: var(--taupe); }
+    .pay-amount { font-family: 'Playfair Display', serif; font-size: 16px; }
+    .pay-alt { font-size: 11px; color: var(--taupe); }
+    .pay-date { font-size: 12px; color: var(--charcoal); }
+
+    /* ===================== VENUE ===================== */
+    .venue-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .venue-card {
+      background: var(--sand);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 20px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .venue-card:hover { border-color: var(--taupe); }
+    .venue-card.selected { border-color: var(--mocha); }
+
+    .venue-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .venue-desc {
+      font-size: 12px;
+      color: var(--mocha);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .venue-tag {
+      display: inline-block;
+      padding: 3px 9px;
+      background: var(--oat);
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--mocha);
+    }
+
+    .venue-panel {
+      background: var(--oat);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .venue-panel-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+
+    .venue-pay-grid {
+      display: grid;
+      grid-template-columns: 40px 1fr 1fr 130px 70px 28px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    /* ===================== EXPENSE TABLE ===================== */
+    .expense-table { width: 100%; border-collapse: collapse; }
+
+    .expense-table th {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      padding: 0 0 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .expense-table td {
+      padding: 10px 8px 10px 0;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .expense-table tr:last-child td { border-bottom: none; }
+
+    .expense-table input[type="text"],
+    .expense-table input[type="number"] {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 5px 8px;
+    }
+
+    .expense-table input:focus {
+      background: var(--sand);
+      border-color: var(--mocha);
+    }
+
+    /* ===================== CHECKLIST ===================== */
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .checklist-item:last-child { border-bottom: none; }
+
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--taupe);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+      background: var(--sand);
+      transition: all 0.15s;
+    }
+
+    .check-box.checked { background: var(--mocha); border-color: var(--mocha); }
+
+    .check-box svg { width: 10px; height: 10px; }
+
+    .inclusion-box {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--mocha);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--mocha);
+    }
+
+    .inclusion-box svg { width: 10px; height: 10px; }
+
+    /* ===================== INCLUSIONS ===================== */
+    .inclusion-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+
+    .inclusion-item:last-child { border-bottom: none; }
+
+    /* ===================== STAY DATES ===================== */
+    .stay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    /* ===================== LEGAL ===================== */
+    .days-away-badge {
+      display: inline-block;
+      background: var(--oat);
+      color: var(--mocha);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-left: 10px;
+    }
+
+    /* ===================== FLASH ===================== */
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .flash {
+      font-size: 12px;
+      color: #3d6e3d;
+      animation: fadeOut 2.2s forwards;
+    }
+
+    /* ===================== SELECT SMALL ===================== */
+    select.sm {
+      width: auto;
+      padding: 5px 8px;
+      font-size: 12px;
+    }
+
+    /* ===================== ATTIRE SUBTOTAL ===================== */
+    .attire-subtotal {
+      text-align: right;
+      font-size: 13px;
+      color: var(--mocha);
+      font-weight: 500;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 640px) {
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .venue-cards { grid-template-columns: 1fr; }
+      .hero-names { font-size: 36px; }
+      .countdown-unit { padding: 0 10px; }
+      .cd-num { font-size: 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .payment-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- =================== HERO =================== -->
+  <div class="hero">
+    <div class="eyebrow hero-eyebrow">Elopement 2027</div>
+    <h1 class="hero-names">Jessica &amp; David</h1>
+    <p class="hero-subline">September 9, 2027 &nbsp;·&nbsp; Lake Como, Italy</p>
+    <div class="countdown">
+      <div class="countdown-unit"><span class="cd-num" id="cd-years">—</span><span class="cd-label">Years</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cd-months">—</span><span class="cd-label">Months</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cd-days">—</span><span class="cd-label">Days</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cd-hours">—</span><span class="cd-label">Hours</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cd-mins">—</span><span class="cd-label">Mins</span></div>
+      <div class="countdown-unit"><span class="cd-num" id="cd-secs">—</span><span class="cd-label">Secs</span></div>
+    </div>
+  </div>
+
+  <!-- =================== PINTEREST =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Vision Board</span>
+      <span class="eyebrow">Pinterest</span>
+    </div>
+    <div class="pinterest-row">
+      <input type="url" id="pinterest-url" placeholder="Paste Pinterest board URL…" oninput="state.pinterestUrl=this.value; saveState();" />
+      <button class="btn btn-primary" onclick="openPinterest()">Open</button>
+    </div>
+  </div>
+
+  <!-- =================== FINANCIAL =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Financial Overview</span>
+      <div class="currency-toggle">
+        <button class="currency-btn active" id="btn-aud" onclick="setCurrency('AUD')">AUD</button>
+        <button class="currency-btn" id="btn-usd" onclick="setCurrency('USD')">USD</button>
+      </div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Total Committed</div>
+        <div class="metric-value" id="metric-total">—</div>
+        <button class="metric-action" onclick="editTotal()">Edit total</button>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Amount Paid</div>
+        <div class="metric-value" id="metric-paid">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Remaining</div>
+        <div class="metric-value" id="metric-remaining">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Attire &amp; Extras</div>
+        <div class="metric-value" id="metric-attire">—</div>
+      </div>
+    </div>
+    <div class="progress-wrap"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="progress-meta">
+      <span id="prog-pct">0% paid</span>
+      <span id="prog-detail"></span>
+    </div>
+  </div>
+
+  <!-- =================== PAYMENT SCHEDULE =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Payment Schedule</span>
+      <span class="eyebrow">Alyssa Belkaci Photo</span>
+    </div>
+    <p style="font-size:12px;color:var(--taupe);margin-bottom:18px;">Original: 9,500€ EUR &nbsp;·&nbsp; USD equivalent: $10,960 &nbsp;·&nbsp; AUD (×1.44): $15,782</p>
+    <div id="photo-payments"></div>
+  </div>
+
+  <!-- =================== VENUE SELECTION =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Venue Selection</span>
+    </div>
+    <div class="venue-cards">
+      <div class="venue-card" id="vcard-balbianello" onclick="selectVenue('balbianello')">
+        <div class="venue-name">Villa Balbianello</div>
+        <div class="venue-desc">Iconic terraced gardens on a wooded promontory. NPS permit required.</div>
+        <span class="venue-tag">Permit · Book early</span>
+      </div>
+      <div class="venue-card" id="vcard-balbiano" onclick="selectVenue('balbiano')">
+        <div class="venue-name">Villa Balbiano</div>
+        <div class="venue-desc">Baroque elegance with private lake access. Intimate and exclusive.</div>
+        <span class="venue-tag">Private hire · Exclusive access</span>
+      </div>
+    </div>
+    <div id="venue-panel"></div>
+  </div>
+
+  <!-- =================== ACCOMMODATION & FLIGHTS =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Accommodation &amp; Flights</span>
+    </div>
+    <table class="expense-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th style="width:130px">Cost (AUD)</th>
+          <th style="width:130px">Card</th>
+          <th style="width:80px;text-align:center">Status</th>
+          <th style="width:28px"></th>
+        </tr>
+      </thead>
+      <tbody id="expense-rows"></tbody>
+    </table>
+    <button class="add-btn" onclick="addExpense()">+ Add expense</button>
+  </div>
+
+  <!-- =================== STAY DATES =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Stay Dates</span>
+    </div>
+    <div style="margin-bottom:28px;">
+      <p class="eyebrow" style="margin-bottom:14px;">Lake Como</p>
+      <div class="stay-grid">
+        <div class="form-group">
+          <label class="form-label">Arrival</label>
+          <input type="date" id="como-arrival" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Departure</label>
+          <input type="date" id="como-departure" />
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:24px;">
+      <p class="eyebrow" style="margin-bottom:14px;">Italy Mini-Moon</p>
+      <div class="stay-grid" style="margin-bottom:12px;">
+        <div class="form-group">
+          <label class="form-label">From</label>
+          <input type="date" id="minimoon-from" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">To</label>
+          <input type="date" id="minimoon-to" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Location</label>
+          <input type="text" id="minimoon-location" placeholder="e.g. Positano, Amalfi Coast" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Accommodation</label>
+          <input type="text" id="minimoon-accommodation" placeholder="Hotel or villa name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Notes</label>
+        <textarea id="minimoon-notes" rows="2" placeholder="Any notes…" style="resize:vertical"></textarea>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <button class="btn btn-primary" onclick="saveDates()">Save dates</button>
+      <span id="dates-flash" style="display:none" class="flash">Saved!</span>
+    </div>
+  </div>
+
+  <!-- =================== INCLUSIONS =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Inclusions</span>
+      <span class="eyebrow">Alyssa Belkaci Photo</span>
+    </div>
+    <div id="inclusions-list"></div>
+  </div>
+
+  <!-- =================== ATTIRE =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Attire</span>
+    </div>
+    <div id="attire-rows"></div>
+    <div id="attire-subtotal"></div>
+  </div>
+
+  <!-- =================== TO-DO =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">To-Do</span>
+    </div>
+    <div id="todo-rows"></div>
+    <button class="add-btn" onclick="addTodo()">+ Add item</button>
+  </div>
+
+  <!-- =================== LEGAL CEREMONY =================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Legal Ceremony — Australia</span>
+    </div>
+    <div style="margin-bottom:20px;">
+      <span style="font-family:'Playfair Display',serif;font-size:18px;">August 2, 2027</span>
+      <span class="days-away-badge" id="legal-days-away"></span>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Celebrant Name</label>
+        <input type="text" id="legal-celebrant" placeholder="Celebrant name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Venue / Location</label>
+        <input type="text" id="legal-venue" placeholder="Venue or location" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Guest List</label>
+        <input type="text" id="legal-guests" placeholder="Guest list details" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">NOIM Lodged Date</label>
+        <input type="date" id="legal-noim-date" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Outfits</label>
+        <input type="text" id="legal-outfits" placeholder="Outfit details" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Dinner / Celebration After</label>
+        <input type="text" id="legal-dinner" placeholder="Restaurant, plans…" />
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:18px;">
+      <label class="form-label">Notes</label>
+      <textarea id="legal-notes" rows="3" placeholder="Additional notes…" style="resize:vertical"></textarea>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <button class="btn btn-primary" onclick="saveLegal()">Save</button>
+      <span id="legal-flash" style="display:none" class="flash">Saved!</span>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+/* =========================================================
+   STATE
+   ========================================================= */
+const RATE = 1.44; // 1 USD = 1.44 AUD
+
+const DEFAULT_STATE = {
+  currency: 'AUD',
+  totalCommittedAUD: 30000,
+  pinterestUrl: '',
+
+  photoPayments: [
+    { id: 1, usdAmount: 3654, dueDate: '2026-04-06', card: 'AMEX',   paid: false },
+    { id: 2, usdAmount: 3653, dueDate: '2027-02-01', card: 'DS NAB', paid: false },
+    { id: 3, usdAmount: 3653, dueDate: '2027-09-09', card: 'JP NAB', paid: false },
+  ],
+
+  selectedVenue: null,
+  venues: {
+    balbianello: { totalCostAUD: '', bookingStatus: 'not-booked', notes: '', payments: [] },
+    balbiano:    { totalCostAUD: '', bookingStatus: 'not-booked', notes: '', payments: [] },
+  },
+
+  expenses: [
+    { id: 1, name: 'Flights Sydney to Milan',  costAUD: '', card: 'AMEX',   paid: false },
+    { id: 2, name: 'Lake Como accommodation',  costAUD: '', card: 'DS NAB', paid: false },
+    { id: 3, name: 'Mini-moon accommodation',  costAUD: '', card: 'JP NAB', paid: false },
+    { id: 4, name: 'Airport transfers',        costAUD: '', card: 'AMEX',   paid: false },
+  ],
+
+  stayDates: {
+    comoArrival: '', comoDeparture: '',
+    minimoonFrom: '', minimoonTo: '',
+    minimoonLocation: '', minimoonAccommodation: '', minimoonNotes: '',
+  },
+
+  attireItems: [
+    { id: 1, checked: false, name: 'Jess dress — commission from Vietnam', priceAUD: '', owner: 'JP' },
+    { id: 2, checked: false, name: 'Shoes',                                priceAUD: '', owner: 'DS' },
+    { id: 3, checked: false, name: 'Veil',                                 priceAUD: '', owner: 'JP' },
+    { id: 4, checked: false, name: "David's tuxedo",                       priceAUD: '', owner: 'DS' },
+    { id: 5, checked: false, name: 'Cufflinks / cuff bearings',            priceAUD: '', owner: 'DS' },
+  ],
+
+  todos: [
+    { id: 1, checked: false, text: 'Book venue permit via Alyssa',            owner: 'JP'   },
+    { id: 2, checked: false, text: 'Confirm officiant with Alyssa',           owner: 'JP'   },
+    { id: 3, checked: false, text: 'Book flights — Sydney to Milan',          owner: 'DS'   },
+    { id: 4, checked: false, text: 'Book Lake Como accommodation',            owner: 'DS'   },
+    { id: 5, checked: false, text: 'Select ceremony song for video',          owner: 'Both' },
+    { id: 6, checked: false, text: 'Lodge NOIM — Notice of Intended Marriage',owner: 'JP'   },
+    { id: 7, checked: false, text: 'Book hair & makeup trial',               owner: 'DS'   },
+    { id: 8, checked: false, text: 'Select mini-moon location',               owner: 'Both' },
+  ],
+
+  legal: {
+    celebrant: '', venue: '', guests: '', noimDate: '',
+    outfits: '', dinner: '', notes: '',
+  },
+};
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem('elopement2027');
+    if (!saved) return JSON.parse(JSON.stringify(DEFAULT_STATE));
+    const s = JSON.parse(saved);
+    // Ensure venues key exists (backwards compat)
+    if (!s.venues) s.venues = JSON.parse(JSON.stringify(DEFAULT_STATE.venues));
+    if (!s.legal)  s.legal  = JSON.parse(JSON.stringify(DEFAULT_STATE.legal));
+    return s;
+  } catch(e) {
+    return JSON.parse(JSON.stringify(DEFAULT_STATE));
+  }
+}
+
+let state = loadState();
+
+function saveState() {
+  localStorage.setItem('elopement2027', JSON.stringify(state));
+}
+
+/* =========================================================
+   CURRENCY HELPERS
+   ========================================================= */
+function audToDisplay(aud) {
+  if (aud === '' || aud === null || aud === undefined) return null;
+  const n = parseFloat(aud);
+  if (isNaN(n)) return null;
+  return state.currency === 'AUD' ? n : n / RATE;
+}
+
+function usdToDisplay(usd) {
+  const n = parseFloat(usd);
+  return state.currency === 'AUD' ? n * RATE : n;
+}
+
+function fmtDisplay(n, decimals = 0) {
+  if (n === null || n === undefined || isNaN(n)) return '—';
+  const sym = state.currency === 'AUD' ? '$' : '$';
+  const suffix = state.currency === 'AUD' ? ' AUD' : ' USD';
+  return sym + n.toLocaleString('en-AU', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix;
+}
+
+function fmtAud(aud)   { const d = audToDisplay(aud); return d === null ? '—' : fmtDisplay(d); }
+function fmtUsd(usd)   { return fmtDisplay(usdToDisplay(usd)); }
+
+function fmtAlt_fromUsd(usd) {
+  // show the opposite currency
+  const n = parseFloat(usd);
+  if (state.currency === 'AUD') return '$' + n.toLocaleString('en-AU', {maximumFractionDigits:0}) + ' USD';
+  else                           return '$' + (n * RATE).toLocaleString('en-AU', {maximumFractionDigits:0}) + ' AUD';
+}
+
+function fmtAlt_fromAud(aud) {
+  const n = parseFloat(aud) || 0;
+  if (state.currency === 'AUD') return '$' + (n / RATE).toLocaleString('en-AU', {maximumFractionDigits:0}) + ' USD';
+  else                           return '$' + n.toLocaleString('en-AU', {maximumFractionDigits:0}) + ' AUD';
+}
+
+/* =========================================================
+   CALCULATIONS
+   ========================================================= */
+function calcPaidAUD() {
+  let total = 0;
+  state.photoPayments.forEach(p => { if (p.paid) total += p.usdAmount * RATE; });
+  Object.values(state.venues).forEach(v => {
+    (v.payments || []).forEach(p => { if (p.paid && p.amountAUD) total += parseFloat(p.amountAUD) || 0; });
+  });
+  state.expenses.forEach(e => { if (e.paid && e.costAUD) total += parseFloat(e.costAUD) || 0; });
+  return total;
+}
+
+function calcAttireAUD() {
+  return state.attireItems.reduce((sum, a) => sum + (parseFloat(a.priceAUD) || 0), 0);
+}
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+function updateCountdown() {
+  const target = new Date('2027-09-09T00:00:00');
+  const now    = new Date();
+  let diff     = target - now;
+  if (diff < 0) diff = 0;
+
+  const totalSecs  = Math.floor(diff / 1000);
+  const secs       = totalSecs % 60;
+  const totalMins  = Math.floor(totalSecs / 60);
+  const mins       = totalMins % 60;
+  const totalHours = Math.floor(totalMins / 60);
+  const hours      = totalHours % 24;
+  const totalDays  = Math.floor(totalHours / 24);
+
+  // Rough year/month/day breakdown
+  const years   = Math.floor(totalDays / 365);
+  const rem1    = totalDays - years * 365;
+  const months  = Math.floor(rem1 / 30);
+  const days    = rem1 - months * 30;
+
+  document.getElementById('cd-years').textContent  = years;
+  document.getElementById('cd-months').textContent = months;
+  document.getElementById('cd-days').textContent   = days;
+  document.getElementById('cd-hours').textContent  = hours;
+  document.getElementById('cd-mins').textContent   = String(mins).padStart(2, '0');
+  document.getElementById('cd-secs').textContent   = String(secs).padStart(2, '0');
+}
+
+function updateLegalDaysAway() {
+  const el = document.getElementById('legal-days-away');
+  if (!el) return;
+  const target = new Date('2027-08-02T00:00:00');
+  const now    = new Date(); now.setHours(0,0,0,0);
+  const diff   = Math.ceil((target - now) / 86400000);
+  el.textContent = diff > 0 ? diff + ' days away' : diff === 0 ? 'Today!' : Math.abs(diff) + ' days ago';
+}
+
+/* =========================================================
+   SVG CHECK
+   ========================================================= */
+const CHECK_SVG = `<svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+/* =========================================================
+   CARD / OWNER SELECTS
+   ========================================================= */
+function cardOpts(sel) {
+  return ['AMEX','DS NAB','JP NAB'].map(c =>
+    `<option value="${c}" ${sel === c ? 'selected' : ''}>${c}</option>`
+  ).join('');
+}
+
+function ownerOpts(sel, includeSelect) {
+  return ['JP','DS','Both'].map(o =>
+    `<option value="${o}" ${sel === o ? 'selected' : ''}>${o}</option>`
+  ).join('');
+}
+
+function ownerPill(owner) {
+  const cls = owner === 'JP' ? 'pill-jp' : owner === 'DS' ? 'pill-ds' : 'pill-both';
+  return `<span class="pill ${cls}">${owner}</span>`;
+}
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+function renderAll() {
+  renderCurrencyToggle();
+  renderFinancial();
+  renderPhotoPayments();
+  renderVenue();
+  renderExpenses();
+  renderAttire();
+  renderTodos();
+  loadFormFields();
+}
+
+function renderCurrencyToggle() {
+  document.getElementById('btn-aud').classList.toggle('active', state.currency === 'AUD');
+  document.getElementById('btn-usd').classList.toggle('active', state.currency === 'USD');
+}
+
+function renderFinancial() {
+  const totalAUD     = parseFloat(state.totalCommittedAUD) || 0;
+  const paidAUD      = calcPaidAUD();
+  const remainingAUD = totalAUD - paidAUD;
+  const attireAUD    = calcAttireAUD();
+  const pct          = totalAUD > 0 ? Math.min(100, (paidAUD / totalAUD) * 100) : 0;
+
+  document.getElementById('metric-total').textContent     = fmtAud(totalAUD);
+  document.getElementById('metric-paid').textContent      = fmtAud(paidAUD);
+  document.getElementById('metric-remaining').textContent = fmtAud(remainingAUD);
+  document.getElementById('metric-attire').textContent    = attireAUD > 0 ? fmtAud(attireAUD) : '—';
+  document.getElementById('progress-fill').style.width    = pct + '%';
+  document.getElementById('prog-pct').textContent         = Math.round(pct) + '% paid';
+  document.getElementById('prog-detail').textContent      = fmtAud(paidAUD) + ' of ' + fmtAud(totalAUD);
+}
+
+function renderPhotoPayments() {
+  const el = document.getElementById('photo-payments');
+  el.innerHTML = state.photoPayments.map(p => {
+    const main = fmtUsd(p.usdAmount);
+    const alt  = fmtAlt_fromUsd(p.usdAmount);
+    const date = new Date(p.dueDate + 'T12:00:00').toLocaleDateString('en-AU', { day:'numeric', month:'short', year:'numeric' });
+    const bc   = p.paid ? 'badge-paid' : 'badge-unpaid';
+    return `<div class="payment-row">
+      <span class="pay-num">${p.id} of 3</span>
+      <div>
+        <div class="pay-amount">${main}</div>
+        <div class="pay-alt">${alt}</div>
+      </div>
+      <span class="pay-date">${date}</span>
+      <select class="sm" onchange="updatePhotoCard(${p.id},this.value)">${cardOpts(p.card)}</select>
+      <span class="badge ${bc}" onclick="togglePhotoPaid(${p.id})">${p.paid ? 'Paid' : 'Unpaid'}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderVenue() {
+  ['balbianello','balbiano'].forEach(v => {
+    document.getElementById('vcard-' + v).classList.toggle('selected', state.selectedVenue === v);
+  });
+
+  const panel = document.getElementById('venue-panel');
+  if (!state.selectedVenue) { panel.innerHTML = ''; return; }
+
+  const v    = state.selectedVenue;
+  const vName = v === 'balbianello' ? 'Villa Balbianello' : 'Villa Balbiano';
+  const vd   = state.venues[v];
+
+  const statusOpts = [
+    { val: 'not-booked',    lbl: 'Not yet booked' },
+    { val: 'enquiry-sent',  lbl: 'Enquiry sent'   },
+    { val: 'confirmed',     lbl: 'Confirmed'       },
+    { val: 'deposit-paid',  lbl: 'Deposit paid'   },
+  ].map(o => `<option value="${o.val}" ${vd.bookingStatus===o.val?'selected':''}>${o.lbl}</option>`).join('');
+
+  const paymentsHtml = (vd.payments || []).map((p, i) => `
+    <div class="venue-pay-grid" style="margin-bottom:8px;">
+      <span style="font-size:12px;color:var(--taupe);">${i+1}</span>
+      <input type="number" placeholder="AUD amount" value="${p.amountAUD||''}"
+        onchange="updateVenuePay('${v}',${i},'amountAUD',this.value)" style="font-size:12px;padding:5px 8px;" />
+      <input type="date" value="${p.dueDate||''}"
+        onchange="updateVenuePay('${v}',${i},'dueDate',this.value)" style="font-size:12px;padding:5px 8px;" />
+      <select class="sm" onchange="updateVenuePay('${v}',${i},'card',this.value)">${cardOpts(p.card)}</select>
+      <span class="badge ${p.paid?'badge-paid':'badge-unpaid'}" onclick="toggleVenuePay('${v}',${i})">${p.paid?'Paid':'Unpaid'}</span>
+      <button class="delete-btn" onclick="deleteVenuePay('${v}',${i})">×</button>
+    </div>`).join('');
+
+  const hdrHtml = (vd.payments||[]).length > 0 ? `
+    <div class="venue-pay-grid" style="margin-bottom:6px;">
+      <span class="form-label">#</span>
+      <span class="form-label">Amount (AUD)</span>
+      <span class="form-label">Due Date</span>
+      <span class="form-label">Card</span>
+      <span class="form-label">Status</span>
+      <span></span>
+    </div>` : '';
+
+  panel.innerHTML = `<div class="venue-panel">
+    <div class="venue-panel-title">${vName} — Booking Details</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Total Venue Cost (AUD)</label>
+        <input type="number" placeholder="Enter amount" value="${vd.totalCostAUD||''}"
+          onchange="updateVenueField('${v}','totalCostAUD',this.value)" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Booking Status</label>
+        <select onchange="updateVenueField('${v}','bookingStatus',this.value)">${statusOpts}</select>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:20px;">
+      <label class="form-label">Notes</label>
+      <textarea rows="2" placeholder="Permit number, contact, inclusions…" style="resize:vertical"
+        onchange="updateVenueField('${v}','notes',this.value)">${escHtml(vd.notes||'')}</textarea>
+    </div>
+    <div style="border-top:1px solid var(--border);padding-top:20px;">
+      <p class="form-label" style="margin-bottom:12px;">Payment Schedule</p>
+      ${hdrHtml}
+      ${paymentsHtml}
+      <button class="add-btn" onclick="addVenuePay('${v}')">+ Add payment</button>
+    </div>
+  </div>`;
+}
+
+function renderExpenses() {
+  const tbody = document.getElementById('expense-rows');
+  tbody.innerHTML = state.expenses.map(e => {
+    const bc = e.paid ? 'badge-paid' : 'badge-unpaid';
+    return `<tr>
+      <td>
+        <input type="text" value="${escHtml(e.name)}"
+          onchange="updateExpense(${e.id},'name',this.value)"
+          style="min-width:160px;" />
+      </td>
+      <td>
+        <input type="number" value="${e.costAUD||''}" placeholder="0"
+          onchange="updateExpense(${e.id},'costAUD',this.value)"
+          style="width:110px;" />
+      </td>
+      <td>
+        <select class="sm" onchange="updateExpense(${e.id},'card',this.value)">${cardOpts(e.card)}</select>
+      </td>
+      <td style="text-align:center;">
+        <span class="badge ${bc}" onclick="toggleExpense(${e.id})">${e.paid?'Paid':'Unpaid'}</span>
+      </td>
+      <td><button class="delete-btn" onclick="deleteExpense(${e.id})">×</button></td>
+    </tr>`;
+  }).join('');
+}
+
+const INCLUSIONS = [
+  'Detailed planning & timeline creation and management',
+  'Vendor booking & coordination',
+  'English-speaking officiant for symbolic ceremony',
+  'Hair & makeup artist on site — custom bridal look (~2.5 hrs, extendable)',
+  'Custom floral bouquet delivered on site',
+  'Ceremony at BnB/hotel or chosen public space',
+  '3 hrs photo coverage — min. 300 high-res edited JPEGs via private gallery',
+  '3 hrs video coverage — 30-sec reel + cinematic 4–5 min film to chosen song',
+  'Transport via car during elopement time',
+  '1 hour wooden boat tour',
+  '1 bottle of champagne',
+];
+
+function renderInclusions() {
+  document.getElementById('inclusions-list').innerHTML = INCLUSIONS.map(item => `
+    <div class="inclusion-item">
+      <div class="inclusion-box">${CHECK_SVG}</div>
+      <span>${item}</span>
+    </div>`).join('');
+}
+
+function renderAttire() {
+  document.getElementById('attire-rows').innerHTML = state.attireItems.map(a => {
+    const bc = a.checked ? 'checked' : '';
+    const oc = a.owner === 'JP' ? 'pill-jp' : a.owner === 'DS' ? 'pill-ds' : 'pill-both';
+    return `<div class="checklist-item">
+      <div class="check-box ${bc}" onclick="toggleAttire(${a.id})">${a.checked ? CHECK_SVG : ''}</div>
+      <span style="flex:1;font-size:13px;${a.checked?'text-decoration:line-through;color:var(--taupe)':''}">${escHtml(a.name)}</span>
+      <input type="number" value="${a.priceAUD||''}" placeholder="Price AUD"
+        style="width:110px;margin-right:8px;"
+        onchange="updateAttire(${a.id},'priceAUD',this.value)" />
+      <select class="sm" onchange="updateAttire(${a.id},'owner',this.value)">
+        ${ownerOpts(a.owner)}
+      </select>
+    </div>`;
+  }).join('');
+
+  const total = calcAttireAUD();
+  const el    = document.getElementById('attire-subtotal');
+  el.innerHTML = total > 0
+    ? `<div class="attire-subtotal">Attire subtotal: ${fmtAud(total)}</div>`
+    : '';
+}
+
+function renderTodos() {
+  document.getElementById('todo-rows').innerHTML = state.todos.map(t => {
+    const bc = t.checked ? 'checked' : '';
+    return `<div class="checklist-item">
+      <div class="check-box ${bc}" onclick="toggleTodo(${t.id})">${t.checked ? CHECK_SVG : ''}</div>
+      <span style="flex:1;font-size:13px;${t.checked?'text-decoration:line-through;color:var(--taupe)':''}">${escHtml(t.text)}</span>
+      <select class="sm" style="margin-right:8px;" onchange="updateTodo(${t.id},'owner',this.value)">
+        ${ownerOpts(t.owner)}
+      </select>
+      <button class="delete-btn" onclick="deleteTodo(${t.id})">×</button>
+    </div>`;
+  }).join('');
+}
+
+function loadFormFields() {
+  // Pinterest
+  document.getElementById('pinterest-url').value = state.pinterestUrl || '';
+
+  // Stay dates
+  const sd = state.stayDates || {};
+  document.getElementById('como-arrival').value           = sd.comoArrival || '';
+  document.getElementById('como-departure').value         = sd.comoDeparture || '';
+  document.getElementById('minimoon-from').value          = sd.minimoonFrom || '';
+  document.getElementById('minimoon-to').value            = sd.minimoonTo || '';
+  document.getElementById('minimoon-location').value      = sd.minimoonLocation || '';
+  document.getElementById('minimoon-accommodation').value = sd.minimoonAccommodation || '';
+  document.getElementById('minimoon-notes').value         = sd.minimoonNotes || '';
+
+  // Legal
+  const l = state.legal || {};
+  document.getElementById('legal-celebrant').value  = l.celebrant || '';
+  document.getElementById('legal-venue').value      = l.venue || '';
+  document.getElementById('legal-guests').value     = l.guests || '';
+  document.getElementById('legal-noim-date').value  = l.noimDate || '';
+  document.getElementById('legal-outfits').value    = l.outfits || '';
+  document.getElementById('legal-dinner').value     = l.dinner || '';
+  document.getElementById('legal-notes').value      = l.notes || '';
+}
+
+/* =========================================================
+   HANDLERS
+   ========================================================= */
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function setCurrency(c) {
+  state.currency = c;
+  saveState();
+  renderCurrencyToggle();
+  renderFinancial();
+  renderPhotoPayments();
+  renderVenue();
+  renderAttire();
+}
+
+function editTotal() {
+  const current = state.totalCommittedAUD || '';
+  const val = prompt('Enter total committed amount (AUD):', current);
+  if (val === null) return;
+  const n = parseFloat(val.replace(/[^0-9.]/g, ''));
+  if (!isNaN(n)) {
+    state.totalCommittedAUD = n;
+    saveState();
+    renderFinancial();
+  }
+}
+
+function openPinterest() {
+  const url = document.getElementById('pinterest-url').value.trim();
+  state.pinterestUrl = url;
+  saveState();
+  if (url) window.open(url, '_blank', 'noopener');
+}
+
+// Photo payments
+function togglePhotoPaid(id) {
+  const p = state.photoPayments.find(x => x.id === id);
+  if (p) { p.paid = !p.paid; saveState(); renderPhotoPayments(); renderFinancial(); }
+}
+
+function updatePhotoCard(id, card) {
+  const p = state.photoPayments.find(x => x.id === id);
+  if (p) { p.card = card; saveState(); }
+}
+
+// Venue
+function selectVenue(v) {
+  state.selectedVenue = state.selectedVenue === v ? null : v;
+  saveState();
+  renderVenue();
+}
+
+function updateVenueField(v, field, val) {
+  state.venues[v][field] = val;
+  saveState();
+  renderFinancial();
+}
+
+function addVenuePay(v) {
+  if (!state.venues[v].payments) state.venues[v].payments = [];
+  state.venues[v].payments.push({ amountAUD: '', dueDate: '', card: 'AMEX', paid: false });
+  saveState();
+  renderVenue();
+}
+
+function updateVenuePay(v, i, field, val) {
+  state.venues[v].payments[i][field] = val;
+  saveState();
+  renderFinancial();
+}
+
+function toggleVenuePay(v, i) {
+  state.venues[v].payments[i].paid = !state.venues[v].payments[i].paid;
+  saveState();
+  renderVenue();
+  renderFinancial();
+}
+
+function deleteVenuePay(v, i) {
+  state.venues[v].payments.splice(i, 1);
+  saveState();
+  renderVenue();
+  renderFinancial();
+}
+
+// Expenses
+function addExpense() {
+  state.expenses.push({ id: Date.now(), name: 'New expense', costAUD: '', card: 'AMEX', paid: false });
+  saveState();
+  renderExpenses();
+}
+
+function updateExpense(id, field, val) {
+  const e = state.expenses.find(x => x.id === id);
+  if (e) { e[field] = val; saveState(); renderFinancial(); }
+}
+
+function toggleExpense(id) {
+  const e = state.expenses.find(x => x.id === id);
+  if (e) { e.paid = !e.paid; saveState(); renderExpenses(); renderFinancial(); }
+}
+
+function deleteExpense(id) {
+  state.expenses = state.expenses.filter(x => x.id !== id);
+  saveState();
+  renderExpenses();
+  renderFinancial();
+}
+
+// Dates
+function saveDates() {
+  state.stayDates = {
+    comoArrival:           document.getElementById('como-arrival').value,
+    comoDeparture:         document.getElementById('como-departure').value,
+    minimoonFrom:          document.getElementById('minimoon-from').value,
+    minimoonTo:            document.getElementById('minimoon-to').value,
+    minimoonLocation:      document.getElementById('minimoon-location').value,
+    minimoonAccommodation: document.getElementById('minimoon-accommodation').value,
+    minimoonNotes:         document.getElementById('minimoon-notes').value,
+  };
+  saveState();
+  flash('dates-flash');
+}
+
+// Attire
+function toggleAttire(id) {
+  const a = state.attireItems.find(x => x.id === id);
+  if (a) { a.checked = !a.checked; saveState(); renderAttire(); }
+}
+
+function updateAttire(id, field, val) {
+  const a = state.attireItems.find(x => x.id === id);
+  if (a) { a[field] = val; saveState(); renderAttire(); renderFinancial(); }
+}
+
+// Todos
+function toggleTodo(id) {
+  const t = state.todos.find(x => x.id === id);
+  if (t) { t.checked = !t.checked; saveState(); renderTodos(); }
+}
+
+function updateTodo(id, field, val) {
+  const t = state.todos.find(x => x.id === id);
+  if (t) { t[field] = val; saveState(); }
+}
+
+function deleteTodo(id) {
+  state.todos = state.todos.filter(x => x.id !== id);
+  saveState();
+  renderTodos();
+}
+
+function addTodo() {
+  const text = prompt('Task description:');
+  if (!text || !text.trim()) return;
+  const ownerRaw = prompt('Owner (JP / DS / Both):', 'Both') || 'Both';
+  const owner = ['JP','DS','Both'].includes(ownerRaw.trim()) ? ownerRaw.trim() : 'Both';
+  state.todos.push({ id: Date.now(), checked: false, text: text.trim(), owner });
+  saveState();
+  renderTodos();
+}
+
+// Legal
+function saveLegal() {
+  state.legal = {
+    celebrant:  document.getElementById('legal-celebrant').value,
+    venue:      document.getElementById('legal-venue').value,
+    guests:     document.getElementById('legal-guests').value,
+    noimDate:   document.getElementById('legal-noim-date').value,
+    outfits:    document.getElementById('legal-outfits').value,
+    dinner:     document.getElementById('legal-dinner').value,
+    notes:      document.getElementById('legal-notes').value,
+  };
+  saveState();
+  flash('legal-flash');
+}
+
+function flash(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = 'inline';
+  el.style.animation = 'none';
+  void el.offsetHeight; // reflow
+  el.style.animation = '';
+  setTimeout(() => { el.style.display = 'none'; }, 2400);
+}
+
+/* =========================================================
+   INIT
+   ========================================================= */
+renderAll();
+renderInclusions();
+updateCountdown();
+updateLegalDaysAway();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
